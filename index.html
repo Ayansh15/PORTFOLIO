@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- =========================================================================
+       Primary SEO & Identity Meta Tags
+       Derived strictly from Ayan Sharma's authentic resume and PRD criteria.
+       ========================================================================= -->
+  <title>Ayan Sharma — Full-Stack Developer & Builder</title>
+  <meta name="description" content="Ayan Sharma — Full-Stack Developer & Builder. First-year Computer Science student at Poornima College of Engineering building web experiences, exploring AI prompt engineering, and learning in public.">
+  <meta name="keywords" content="Ayan Sharma, Full-Stack Developer, Web Development, Generative AI, Prompt Engineering, JavaScript, Python, Manthan 2026, TRICON Hackathon">
+  <meta name="author" content="Ayan Sharma">
+
+  <!-- Open Graph / Social Sharing Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ayan Sharma — Full-Stack Developer & Builder">
+  <meta property="og:description" content="I learn by building. I turn ideas into working experiences. Minimal, dark, cinematic portfolio.">
+  <meta property="og:image" content="assets/images/hero.png">
+
+  <!-- Favicon (SVG inline data URI for crisp monochrome icon) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23050505'/><text x='50%' y='68%' text-anchor='middle' fill='%23ffffff' font-family='sans-serif' font-weight='900' font-size='56'>A</text></svg>">
+
+  <!-- Google Fonts: Space Grotesk (Editorial headings & numerals) + Inter (Clean body typography) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Custom Interactive Cursor (Desktop Only — Handled gracefully via CSS & JS)
+       ========================================================================= -->
+  <div class="custom-cursor" id="customCursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring">
+      <span class="cursor-text" id="cursorText">VIEW</span>
+    </div>
+  </div>
+
+  <!-- Ambient Cinematic Background Glows -->
+  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       Global Sticky Navigation
+       - Minimal monochrome aesthetic
+       - Frosted glass backdrop with dynamic scroll opacity
+       - Mobile drawer with accessible toggle button
+       ========================================================================= -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Ayan Sharma Home">
+        <img src="assets/images/avatar.jpg" alt="Ayan Sharma Logo" class="brand-avatar-img">
+        <span class="brand-monogram">AYAN</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" class="nav-link">ABOUT</a></li>
+        <li><a href="#capabilities" class="nav-link">CAPABILITIES</a></li>
+        <li><a href="#projects" class="nav-link">WORK</a></li>
+        <li><a href="#skills" class="nav-link">SKILLS</a></li>
+        <li><a href="#journey" class="nav-link">JOURNEY</a></li>
+        <li><a href="#learning-public" class="nav-link">BUILDING IN PUBLIC</a></li>
+        <li class="nav-connect-item">
+          <a href="#floatingConnectWidget" class="nav-link cta-link" id="navContactBtn" aria-haspopup="true" aria-expanded="false">
+            <span>LET'S CONNECT</span>
+            <svg class="nav-cta-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+
+          <!-- Navigation Connect Hover Portal Dropdown -->
+          <div class="nav-connect-dropdown" id="navConnectDropdown" role="menu">
+            <div class="nav-dropdown-header">CONNECT WITH AYAN</div>
+
+            <a href="https://www.linkedin.com/in/ayan-sharma-420218369/" target="_blank" rel="noopener noreferrer" class="connect-menu-item" role="menuitem">
+              <span class="connect-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </span>
+              <div class="connect-item-info">
+                <span class="item-title">LinkedIn</span>
+                <span class="item-sub">Connect &amp; Chat</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/Ayansh15" target="_blank" rel="noopener noreferrer" class="connect-menu-item" role="menuitem">
+              <span class="connect-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </span>
+              <div class="connect-item-info">
+                <span class="item-title">GitHub</span>
+                <span class="item-sub">Code Repos</span>
+              </div>
+            </a>
+
+            <a href="https://www.youtube.com/@WizXCode" target="_blank" rel="noopener noreferrer" class="connect-menu-item" role="menuitem">
+              <span class="connect-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </span>
+              <div class="connect-item-info">
+                <span class="item-title">YouTube</span>
+                <span class="item-sub">Tutorials</span>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/wizxcode/" target="_blank" rel="noopener noreferrer" class="connect-menu-item" role="menuitem">
+              <span class="connect-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+              </span>
+              <div class="connect-item-info">
+                <span class="item-title">Instagram</span>
+                <span class="item-sub">@wizxcode</span>
+              </div>
+            </a>
+
+            <a href="mailto:ayan09072007@gmail.com" class="connect-menu-item" role="menuitem">
+              <span class="connect-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </span>
+              <div class="connect-item-info">
+                <span class="item-title">Email</span>
+                <span class="item-sub">ayan09072007@gmail.com</span>
+              </div>
+            </a>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="mainContent">
+    <!-- =========================================================================
+         HERO TO ABOUT SCROLL TRANSITION STAGE
+         Enables smooth minimizing of Hero while maximizing the About page
+         ========================================================================= -->
+    <div class="hero-transition-stage" id="heroTransitionStage">
+      <!-- 1. HERO SECTION -->
+      <section class="hero-section" id="hero">
+        <!-- Fullscreen Cinematic Background Container -->
+        <div class="hero-visual-container">
+          <img 
+            src="assets/images/hero.png" 
+            alt="Ayan Sharma backlit portrait silhouette" 
+            class="hero-image"
+            loading="eager"
+            fetchpriority="high"
+          >
+          <div class="hero-image-vignette" aria-hidden="true"></div>
+        </div>
+
+        <!-- Hero Text & Action Content -->
+        <div class="hero-content">
+          <h1 class="hero-name reveal-item">AYAN SHARMA</h1>
+
+          <!-- Confident, authoritative descriptor -->
+          <p class="hero-tagline reveal-item">FULL-STACK DEVELOPER &amp; BUILDER</p>
+
+          <p class="hero-philosophy reveal-item">
+            I learn by building. I turn ideas into working experiences.
+          </p>
+
+          <!-- Primary Hero Actions -->
+          <div class="hero-actions reveal-item">
+            <a href="#projects" class="btn btn-primary">
+              <span>VIEW MY WORK</span>
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+
+            <a href="https://www.linkedin.com/in/ayan-sharma-420218369/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <span>CONNECT ON LINKEDIN</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+
+          <!-- Social Quick Bar with real verified links -->
+          <div class="hero-social-strip reveal-item">
+            <span class="social-label">CONNECT —</span>
+            <a href="https://www.linkedin.com/in/ayan-sharma-420218369/" target="_blank" rel="noopener noreferrer" class="hero-social-link">LinkedIn</a>
+            <a href="https://github.com/Ayansh15" target="_blank" rel="noopener noreferrer" class="hero-social-link">GitHub</a>
+            <a href="https://www.youtube.com/@WizXCode" target="_blank" rel="noopener noreferrer" class="hero-social-link">YouTube</a>
+            <a href="https://www.instagram.com/wizxcode/" target="_blank" rel="noopener noreferrer" class="hero-social-link">Instagram</a>
+            <a href="mailto:ayan09072007@gmail.com" class="hero-social-link">Email</a>
+          </div>
+        </div>
+
+        <!-- Subtle Scroll Down Indicator -->
+        <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+          <span class="mouse-icon">
+            <span class="wheel"></span>
+          </span>
+          <span class="indicator-text">SCROLL</span>
+        </a>
+      </section>
+
+      <!-- 2. ABOUT SECTION (Transforms from minimized to maximized during scroll) -->
+      <section class="section about-section" id="about">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-num">01</span>
+            <h2 class="section-title">ABOUT</h2>
+          </div>
+
+          <div class="about-grid">
+            <!-- Story column -->
+            <div class="about-story">
+              <blockquote class="about-quote">
+                “Building my skills one project at a time.”
+              </blockquote>
+
+              <p class="about-paragraph">
+                I am a first-year Computer Science student at <strong>Poornima College of Engineering (Batch C2)</strong>, pursuing my B.Tech (2025–2029). Rather than relying solely on abstract theory, my primary mode of learning is active creation: analyzing real-world systems, dissecting interfaces, and reconstructing them into fully functional software.
+              </p>
+
+              <p class="about-paragraph">
+                I am comfortable moving quickly from concept to working implementation. My technical focus spans responsive web engineering, emerging full-stack architectures (React, Node.js, MongoDB), and modern <strong>Generative AI &amp; Prompt Engineering workflows</strong>. 
+              </p>
+
+              <p class="about-paragraph highlight-text">
+                Crucially, I believe in building in public — documenting lessons, technical bottlenecks, and milestones across YouTube, Instagram, and LinkedIn.
+              </p>
+
+              <div class="about-credentials">
+                <div class="credential-item">
+                  <span class="cred-label">INSTITUTION</span>
+                  <span class="cred-val">Poornima College of Engineering</span>
+                </div>
+                <div class="credential-item">
+                  <span class="cred-label">DEGREE</span>
+                  <span class="cred-val">B.Tech in Computer Science &amp; Engineering</span>
+                </div>
+                <div class="credential-item">
+                  <span class="cred-label">LOCATION</span>
+                  <span class="cred-val">Jaipur, Rajasthan, India</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Terminal & Live Activity Feed -->
+            <div class="about-interactive-panel">
+              <!-- Live Dev Terminal -->
+              <div class="dev-terminal-card">
+                <div class="terminal-header">
+                  <div class="terminal-dots" aria-hidden="true">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                  </div>
+                  <span class="terminal-title">ayan@workspace: ~/status</span>
+                  <span class="terminal-badge">LIVE</span>
+                </div>
+                <div class="terminal-body">
+                  <div class="term-line prompt">
+                    <span class="term-prefix">$</span>
+                    <span class="term-cmd">cat profile.json</span>
+                  </div>
+                  <div class="term-line output">
+                    <span class="json-key">"identity"</span>: <span class="json-str">"Full-Stack Developer &amp; Student"</span>,
+                  </div>
+                  <div class="term-line output">
+                    <span class="json-key">"channels"</span>: [<span class="json-str">"YouTube @WizXCode"</span>, <span class="json-str">"Instagram @wizxcode"</span>],
+                  </div>
+                  <div class="term-line output">
+                    <span class="json-key">"hackathon"</span>: <span class="json-str">"ACM Fremont Chapter (Team GPAK)"</span>,
+                  </div>
+                  <div class="term-line output">
+                    <span class="json-key">"status"</span>: <span class="json-highlight">"Building in public &amp; shipping code"</span>
+                  </div>
+                  <div class="term-line prompt term-interactive-row">
+                    <span class="term-prefix">$</span>
+                    <span class="term-cmd" id="terminalDynamicCmd">run status_check.sh</span>
+                    <span class="term-cursor" aria-hidden="true">_</span>
+                  </div>
+                </div>
+                <div class="terminal-chips">
+                  <button class="term-action-chip" data-cmd="cat stats">⚡ System Stats</button>
+                  <button class="term-action-chip" data-cmd="cat stack">🛠️ Core Stack</button>
+                  <button class="term-action-chip" data-cmd="cat mission">🚀 Mission</button>
+                </div>
+              </div>
+
+              <!-- Quick Focus Status Badges -->
+              <div class="dev-status-strip">
+                <div class="status-metric">
+                  <span class="metric-num">B.Tech</span>
+                  <span class="metric-desc">CSE '29 Batch C2</span>
+                </div>
+                <div class="status-metric">
+                  <span class="metric-num">2026</span>
+                  <span class="metric-desc">Manthan Platform</span>
+                </div>
+                <div class="status-metric">
+                  <span class="metric-num">ACM</span>
+                  <span class="metric-desc">NextGen Hackathon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =========================================================================
+         3. WHAT I DO / CAPABILITIES
+         Turns skills into active capabilities:
+         - BUILD (Web Experiences)
+         - EXPLORE (Full-Stack Architecture)
+         - CREATE (Generative AI & Prompt Engineering)
+         - SHARE (Learning in Public)
+         ========================================================================= -->
+    <section class="section capabilities-section" id="capabilities">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-num">02</span>
+          <h2 class="section-title">CAPABILITIES</h2>
+          <p class="section-subtitle">What I build, explore, and bring to life through dedicated technical practice.</p>
+        </div>
+
+        <div class="capabilities-grid">
+          <!-- Capability 1 -->
+          <div class="capability-card">
+            <div class="cap-header">
+              <span class="cap-action">BUILD</span>
+              <span class="cap-indicator" aria-hidden="true">01</span>
+            </div>
+            <h3 class="cap-title">Web Experiences</h3>
+            <p class="cap-text">
+              High-performance, accessible, and responsive interfaces built with clean HTML5, modern CSS3 layouts (Flexbox, CSS Grid), and lightweight vanilla JavaScript.
+            </p>
+            <ul class="cap-tags">
+              <li>Responsive Layouts</li>
+              <li>Semantic Web</li>
+              <li>DOM Architecture</li>
+            </ul>
+          </div>
+
+          <!-- Capability 2 -->
+          <div class="capability-card">
+            <div class="cap-header">
+              <span class="cap-action">EXPLORE</span>
+              <span class="cap-indicator" aria-hidden="true">02</span>
+            </div>
+            <h3 class="cap-title">Full-Stack Architecture</h3>
+            <p class="cap-text">
+              Engineering end-to-end applications utilizing React, Node.js, Express, and MongoDB. Experience handling secure attendee ticketing, digital QR pass issuance, and administrative fest dashboards.
+            </p>
+            <ul class="cap-tags">
+              <li>React.js</li>
+              <li>Node / Express</li>
+              <li>MongoDB &amp; MySQL</li>
+            </ul>
+          </div>
+
+          <!-- Capability 3 -->
+          <div class="capability-card">
+            <div class="cap-header">
+              <span class="cap-action">CREATE</span>
+              <span class="cap-indicator" aria-hidden="true">03</span>
+            </div>
+            <h3 class="cap-title">Generative AI &amp; Prompt Engineering</h3>
+            <p class="cap-text">
+              Exploring cutting-edge generative AI capabilities, LLM integration, prompt refinement, and AI-augmented developer workflows to accelerate delivery from concept to production.
+            </p>
+            <ul class="cap-tags">
+              <li>Prompt Engineering</li>
+              <li>Workflow Automation</li>
+              <li>LLM Experimentation</li>
+            </ul>
+          </div>
+
+          <!-- Capability 4 -->
+          <div class="capability-card">
+            <div class="cap-header">
+              <span class="cap-action">SHARE</span>
+              <span class="cap-indicator" aria-hidden="true">04</span>
+            </div>
+            <h3 class="cap-title">Learning in Public</h3>
+            <p class="cap-text">
+              Transparently sharing tutorials, coding walkthroughs, and project breakthroughs across YouTube, Instagram, and LinkedIn to build community and sharpen domain mastery.
+            </p>
+            <ul class="cap-tags">
+              <li>Code Walkthroughs</li>
+              <li>Video Tutorials</li>
+              <li>Milestone Sharing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. SELECTED WORK (PROJECTS)
+         Large editorial presentation of authentic projects:
+         - 01: MANTHAN 2026 (Full-Stack Fest Platform)
+         - 02: TRICON (2nd NextGen Hackathon with ACM Fremont Chapter / Team GPAK)
+         - 03: DESKTOP AUTO CLICKER (Python 3.14 / PyAutoGUI / CustomTkinter / winsound)
+         - 04: CLONE LAB (Swiggy, Netflix with Hinglish walkthrough, Dineout)
+         Each card features:
+         1. Case Study Modal Button
+         2. LINKEDIN POST Button (Directly opens relevant LinkedIn share/discussion)
+         3. GITHUB REPO Button (Directly opens relevant repository on github.com/Ayansh15)
+         ========================================================================= -->
+    <section class="section projects-section" id="projects">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-num">03</span>
+          <h2 class="section-title">SELECTED WORK</h2>
+          <p class="section-subtitle">Things I've built while learning, experimenting, and solving problems.</p>
+        </div>
+
+        <div class="projects-list">
+
+          <!-- Project 01: Manthan 2026 -->
+          <article class="project-card" data-project="manthan">
+            <div class="project-meta-top">
+              <span class="project-category">01 / FULL-STACK PLATFORM</span>
+              <span class="project-date">August 2026</span>
+            </div>
+
+            <div class="project-card-inner">
+              <div class="project-info">
+                <h3 class="project-title">MANTHAN 2026</h3>
+                <p class="project-tagline">Intercollegiate Fest Platform for Poddar Group of Institutions</p>
+                <p class="project-description">
+                  A comprehensive full-stack digital fest management ecosystem built to orchestrate multi-college event registrations, issue cryptographic/QR-coded digital entry passes, and provide administrative analytics for organizers.
+                </p>
+
+                <div class="project-tech-stack">
+                  <span class="tech-pill">React</span>
+                  <span class="tech-pill">Node.js</span>
+                  <span class="tech-pill">MongoDB</span>
+                  <span class="tech-pill">QR Verification</span>
+                  <span class="tech-pill">Admin Panel</span>
+                </div>
+
+                <div class="project-action-row">
+                  <button class="project-btn project-btn-primary" data-modal="manthan" aria-label="View case study for Manthan 2026">
+                    <span>CASE STUDY</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </button>
+
+                  <a href="https://www.linkedin.com/in/ayan-sharma-420218369/" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-secondary" title="Explore Manthan on LinkedIn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <span>LINKEDIN POST</span>
+                  </a>
+
+                  <a href="https://github.com/Ayansh15" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-secondary" title="Explore source on GitHub">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GITHUB REPO</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-graphic" aria-hidden="true">
+                <div class="graphic-badge">FEST ECOSYSTEM</div>
+                <div class="code-visual">
+                  <span class="code-line"><span class="c-key">POST</span> /api/v1/registration/pass</span>
+                  <span class="code-line"><span class="c-accent">QR_CODE_PAYLOAD</span>: PASS_PGI_2026</span>
+                  <span class="code-line"><span class="c-dim">STATUS</span>: 200 OK [VERIFIED]</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 02: TRICON -->
+          <article class="project-card" data-project="tricon">
+            <div class="project-meta-top">
+              <span class="project-category">02 / GLOBAL HACKATHON</span>
+              <span class="project-date">August 2026</span>
+            </div>
+
+            <div class="project-card-inner">
+              <div class="project-info">
+                <h3 class="project-title">TRICON</h3>
+                <p class="project-tagline">2nd NextGen Hackathon — ACM Fremont Chapter, USA (with SCRS)</p>
+                <p class="project-description">
+                  Collaborated as part of a 4-person engineering team (<strong>Team GPAK</strong>: Pragya Sharma, Khyati Pathak, Garvit Manwani, Ayan Sharma) to formulate, develop, and pitch an original technological solution at an international hackathon.
+                </p>
+
+                <div class="project-tech-stack">
+                  <span class="tech-pill">ACM Fremont Chapter</span>
+                  <span class="tech-pill">SCRS Collaboration</span>
+                  <span class="tech-pill">Team GPAK</span>
+                  <span class="tech-pill">Product Pitch</span>
+                </div>
+
+                <div class="project-action-row">
+                  <button class="project-btn project-btn-primary" data-modal="tricon" aria-label="View case study for TRICON Hackathon">
+                    <span>CASE STUDY</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </button>
+
+                  <a href="https://www.linkedin.com/in/ayan-sharma-420218369/" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-secondary" title="Explore TRICON Hackathon on LinkedIn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <span>LINKEDIN POST</span>
+                  </a>
+
+                  <a href="https://github.com/Ayansh15" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-secondary" title="Explore source on GitHub">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GITHUB REPO</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-graphic" aria-hidden="true">
+                <div class="graphic-badge">GLOBAL COLLABORATION</div>
+                <div class="team-visual">
+                  <div class="team-tag">Team GPAK</div>
+                  <div class="team-sub">ACM NextGen 2026</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 03: Auto Clicker -->
+          <article class="project-card" data-project="autoclicker">
+            <div class="project-meta-top">
+              <span class="project-category">03 / PERSONAL UTILITY</span>
+              <span class="project-date">2026</span>
+            </div>
+
+            <div class="project-card-inner">
+              <div class="project-info">
+                <h3 class="project-title">DESKTOP AUTO CLICKER</h3>
+                <p class="project-tagline">Python Input Automation &amp; System Compatibility Engineering</p>
+                <p class="project-description">
+                  A high-precision desktop input utility developed with Python and CustomTkinter for automated clicking routines. Engineered an ingenious low-latency audio workaround for Python 3.14 on Windows by replacing unmaintained audio packages with native <code>winsound</code>.
+                </p>
+
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">CustomTkinter</span>
+                  <span class="tech-pill">PyAutoGUI</span>
+                  <span class="tech-pill">winsound (Windows Native)</span>
+                </div>
+
+                <div class="project-action-row">
+                  <button class="project-btn project-btn-primary" data-modal="autoclicker" aria-label="View case study for Desktop Auto Clicker">
+                    <span>CASE STUDY</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </button>
+
+                  <a href="https://www.linkedin.com/in/ayan-sharma-420218369/" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-secondary" title="Explore Auto Clicker on LinkedIn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <span>LINKEDIN POST</span>
+                  </a>
+
+                  <a href="https://github.com/Ayansh15" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-secondary" title="Explore source on GitHub">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GITHUB REPO</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-graphic" aria-hidden="true">
+                <div class="graphic-badge">SYSTEM SOLVER</div>
+                <div class="code-visual">
+                  <span class="code-line"><span class="c-key">import</span> winsound</span>
+                  <span class="code-line"><span class="c-accent"># Python 3.14 Compatibility</span></span>
+                  <span class="code-line"><span class="c-dim">winsound.Beep(1200, 80)</span></span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 04: Clone Lab -->
+          <article class="project-card" data-project="clonelab">
+            <div class="project-meta-top">
+              <span class="project-category">04 / INTERFACE LAB</span>
+              <span class="project-date">2025 – 2026</span>
+            </div>
+
+            <div class="project-card-inner">
+              <div class="project-info">
+                <h3 class="project-title">CLONE LAB</h3>
+                <p class="project-tagline">Dissecting &amp; Recreating Production Interfaces</p>
+                <p class="project-description">
+                  A dedicated laboratory recreation of high-traffic real-world platforms. Includes an iterative responsive <strong>Swiggy</strong> clone, a <strong>Netflix</strong> homepage recreation produced with a Hinglish architectural walkthrough, and a responsive <strong>Dineout</strong> restaurant discovery card interface.
+                </p>
+
+                <div class="project-tech-stack">
+                  <span class="tech-pill">HTML5 Semantics</span>
+                  <span class="tech-pill">CSS3 Flexbox</span>
+                  <span class="tech-pill">Horizontal Scroll</span>
+                  <span class="tech-pill">Typography Matching</span>
+                  <span class="tech-pill">Responsive UI</span>
+                </div>
+
+                <div class="project-action-row">
+                  <button class="project-btn project-btn-primary" data-modal="clonelab" aria-label="View case study for Clone Lab">
+                    <span>CASE STUDY</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </button>
+
+                  <a href="https://www.linkedin.com/in/ayan-sharma-420218369/" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-secondary" title="Explore Clone Lab on LinkedIn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <span>LINKEDIN POST</span>
+                  </a>
+
+                  <a href="https://github.com/Ayansh15" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-secondary" title="Explore source on GitHub">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GITHUB REPO</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-graphic" aria-hidden="true">
+                <div class="graphic-badge">UI MASTERY</div>
+                <div class="clone-badges">
+                  <span>SWIGGY</span>
+                  <span>NETFLIX</span>
+                  <span>DINEOUT</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. SKILLS SECTION
+         Typography-driven, editorial presentation (No outdated percent progress bars)
+         Categories:
+         - LANGUAGES
+         - WEB & DATA
+         - EXPLORING & TOOLS
+         ========================================================================= -->
+    <section class="section skills-section" id="skills">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-num">04</span>
+          <h2 class="section-title">SKILLS &amp; TOOLKIT</h2>
+          <p class="section-subtitle">Core technical languages, web platforms, and engineering methodologies.</p>
+        </div>
+
+        <div class="skills-editorial-grid">
+          <!-- Languages Column -->
+          <div class="skill-category-card">
+            <h3 class="category-heading">LANGUAGES</h3>
+            <p class="category-note">Core programming languages utilized for problem-solving and algorithmic fundamentals.</p>
+            <div class="skill-tags-cloud">
+              <span class="skill-chip">C++</span>
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">C</span>
+              <span class="skill-chip">JavaScript (ES6+)</span>
+            </div>
+          </div>
+
+          <!-- Web & Data Column -->
+          <div class="skill-category-card">
+            <h3 class="category-heading">WEB &amp; DATA</h3>
+            <p class="category-note">Foundations and datastores powering full-stack web and desktop applications.</p>
+            <div class="skill-tags-cloud">
+              <span class="skill-chip">HTML5</span>
+              <span class="skill-chip">CSS3</span>
+              <span class="skill-chip">MySQL</span>
+              <span class="skill-chip">MongoDB</span>
+              <span class="skill-chip">React.js</span>
+              <span class="skill-chip">Node.js</span>
+            </div>
+          </div>
+
+          <!-- Exploring & Tools Column -->
+          <div class="skill-category-card">
+            <h3 class="category-heading">EXPLORING &amp; TOOLS</h3>
+            <p class="category-note">Emerging technological frontiers, AI workflows, and system utilities.</p>
+            <div class="skill-tags-cloud">
+              <span class="skill-chip highlight-chip">Generative AI</span>
+              <span class="skill-chip highlight-chip">Prompt Engineering</span>
+              <span class="skill-chip">CustomTkinter</span>
+              <span class="skill-chip">PyAutoGUI</span>
+              <span class="skill-chip">Git &amp; GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. JOURNEY / TIMELINE
+         Clean vertical timeline documenting chronological growth and academic progression.
+         ========================================================================= -->
+    <section class="section journey-section" id="journey">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-num">05</span>
+          <h2 class="section-title">JOURNEY</h2>
+          <p class="section-subtitle">Chronological progression of education, projects, and milestone achievements.</p>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <!-- Item 1 -->
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-time">Aug 2025 — Present</div>
+            <div class="timeline-content">
+              <div class="timeline-badge">ACADEMIC FOUNDATION</div>
+              <h3 class="timeline-title">B.Tech in Computer Science &amp; Engineering</h3>
+              <p class="timeline-org">Poornima College of Engineering, Jaipur &bull; Batch C2 (2025 &ndash; 2029)</p>
+              <p class="timeline-text">
+                Immersed in first-year foundational coursework spanning Engineering Physics (optics, quantum mechanics, vector calculus), Linear Algebra (eigenvalues, matrix normal forms), and computational fundamentals.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-time">2025 — 2026</div>
+            <div class="timeline-content">
+              <div class="timeline-badge">UI PRACTICE</div>
+              <h3 class="timeline-title">Production Interface Recreations (Clone Lab)</h3>
+              <p class="timeline-org">Independent Deep Dives</p>
+              <p class="timeline-text">
+                Practiced production web layout techniques: flexbox grid alignments, horizontal mobile scrolling, asset optimization, and navbar states through detailed clones of Swiggy, Netflix, and Dineout.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-time">2026</div>
+            <div class="timeline-content">
+              <div class="timeline-badge">DESKTOP SYSTEM TOOL</div>
+              <h3 class="timeline-title">Desktop Auto Clicker Tool</h3>
+              <p class="timeline-org">Python Desktop Utility</p>
+              <p class="timeline-text">
+                Developed an automation tool with CustomTkinter and PyAutoGUI. Resolved modern Windows / Python 3.14 sound driver incompatibility by engineering a native <code>winsound</code> fallback.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-time">August 2026</div>
+            <div class="timeline-content">
+              <div class="timeline-badge">HACKATHON COLLABORATION</div>
+              <h3 class="timeline-title">TRICON — 2nd NextGen Hackathon</h3>
+              <p class="timeline-org">ACM Fremont Chapter, USA (with SCRS)</p>
+              <p class="timeline-text">
+                Formed 4-person engineering team &ldquo;Team GPAK&rdquo; (with Pragya Sharma, Khyati Pathak, Garvit Manwani) to architect and pitch an innovative technology solution in an international contest.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="timeline-node">
+            <div class="timeline-marker"></div>
+            <div class="timeline-time">August 2026</div>
+            <div class="timeline-content">
+              <div class="timeline-badge">FULL-STACK DEPLOYMENT</div>
+              <h3 class="timeline-title">MANTHAN 2026 Intercollegiate Fest Platform</h3>
+              <p class="timeline-org">Poddar Group of Institutions</p>
+              <p class="timeline-text">
+                Architected full-stack event portal utilizing React, Node.js, and MongoDB, delivering dynamic registrant verification, digital QR pass issuance, and an administrative control panel.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 6: Future Forward -->
+          <div class="timeline-node">
+            <div class="timeline-marker active"></div>
+            <div class="timeline-time">2026 &amp; Beyond</div>
+            <div class="timeline-content">
+              <div class="timeline-badge">ACTIVE HORIZON</div>
+              <h3 class="timeline-title">Deep Full-Stack &amp; Generative AI Systems</h3>
+              <p class="timeline-org">Continuous Public Engineering</p>
+              <p class="timeline-text">
+                Advancing production backend design, database optimization, and prompt engineering integration while sharing every milestone openly with the community.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. BUILDING IN PUBLIC
+         Authentic identity anchor showcasing public education & milestones:
+         - YouTube: Coding tutorials & project walkthroughs (@WizXCode)
+         - LinkedIn: Sharing projects and learning milestones
+         ========================================================================= -->
+    <section class="section public-section" id="learning-public">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-num">06</span>
+          <h2 class="section-title">BUILDING IN PUBLIC</h2>
+          <p class="section-subtitle">I don't just build projects in isolation — I document and share the process.</p>
+        </div>
+
+        <div class="public-grid">
+          <!-- YouTube Card -->
+          <div class="public-card">
+            <div class="public-icon-row">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              <span class="channel-tag">@WizXCode</span>
+            </div>
+            <h3 class="public-title">YouTube</h3>
+            <p class="public-text">
+              Sharing technical code breakdowns, live project walkthroughs (such as the Netflix clone Hinglish session), and foundational web concepts.
+            </p>
+            <div class="public-meta">
+              <a href="https://www.youtube.com/@WizXCode" target="_blank" rel="noopener noreferrer" class="link-anchor">
+                Watch on YouTube &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Instagram Card -->
+          <div class="public-card">
+            <div class="public-icon-row">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+              </svg>
+              <span class="channel-tag">@wizxcode</span>
+            </div>
+            <h3 class="public-title">Instagram</h3>
+            <p class="public-text">
+              Creating bite-sized coding education content, design tips, student developer routines, and behind-the-scenes progress clips.
+            </p>
+            <div class="public-meta">
+              <a href="https://www.instagram.com/wizxcode/" target="_blank" rel="noopener noreferrer" class="link-anchor">
+                Follow on Instagram &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- LinkedIn Card -->
+          <div class="public-card">
+            <div class="public-icon-row">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span class="channel-tag">PROFESSIONAL NETWORK</span>
+            </div>
+            <h3 class="public-title">LinkedIn</h3>
+            <p class="public-text">
+              Documenting project completions, engineering reflections, hackathon learnings, and networking with fellow software engineers.
+            </p>
+            <div class="public-meta">
+              <a href="https://www.linkedin.com/in/ayan-sharma-420218369/" target="_blank" rel="noopener noreferrer" class="link-anchor">
+                Connect on LinkedIn &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       8. FLOATING STICKY AVATAR CONNECT WIDGET
+       - Stays fixed on the bottom-right corner of the screen
+       - Displays an introductory greeting message for the first 5 seconds on load
+       - Hovering on the avatar expands all connection options (LinkedIn, GitHub, YouTube, Instagram, Email)
+       - Also supports clicking / tapping to toggle connection methods on mobile
+       ========================================================================= -->
+  <aside class="floating-connect-widget" id="floatingConnectWidget" aria-label="Quick Connect Menu">
+    <!-- First 5-second greeting message bubble -->
+    <div class="avatar-speech-bubble" id="avatarSpeechBubble" role="status" aria-live="polite">
+      <span class="bubble-text">Hey there! Let&rsquo;s connect <span class="bubble-hint">(double click on it to connect)</span></span>
+      <button class="bubble-dismiss-btn" id="bubbleDismissBtn" aria-label="Dismiss message">&times;</button>
+    </div>
+
+    <!-- Quick Connect Expanded Menu (pops up above the avatar on hover/toggle) -->
+    <div class="avatar-connect-menu" id="avatarConnectMenu">
+      <span class="connect-menu-header">CONNECT WITH AYAN</span>
+      
+      <a href="https://www.linkedin.com/in/ayan-sharma-420218369/" target="_blank" rel="noopener noreferrer" class="connect-menu-item" title="LinkedIn Profile">
+        <span class="connect-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </span>
+        <div class="connect-item-info">
+          <span class="item-title">LinkedIn</span>
+          <span class="item-sub">Connect &amp; Chat</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/Ayansh15" target="_blank" rel="noopener noreferrer" class="connect-menu-item" title="GitHub Profile">
+        <span class="connect-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </span>
+        <div class="connect-item-info">
+          <span class="item-title">GitHub</span>
+          <span class="item-sub">Code Repos</span>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/@WizXCode" target="_blank" rel="noopener noreferrer" class="connect-menu-item" title="YouTube Channel">
+        <span class="connect-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </span>
+        <div class="connect-item-info">
+          <span class="item-title">YouTube</span>
+          <span class="item-sub">Tutorials</span>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/wizxcode/" target="_blank" rel="noopener noreferrer" class="connect-menu-item" title="Instagram Profile">
+        <span class="connect-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </span>
+        <div class="connect-item-info">
+          <span class="item-title">Instagram</span>
+          <span class="item-sub">@wizxcode</span>
+        </div>
+      </a>
+
+      <a href="mailto:ayan09072007@gmail.com" class="connect-menu-item" title="Email Direct">
+        <span class="connect-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </span>
+        <div class="connect-item-info">
+          <span class="item-title">Email</span>
+          <span class="item-sub">ayan09072007@gmail.com</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Sticky Trigger Avatar Button -->
+    <button class="avatar-trigger-btn" id="avatarTriggerBtn" aria-label="Toggle Connect Menu" aria-haspopup="true">
+      <div class="avatar-img-wrap">
+        <img src="assets/images/avatar.jpg" alt="Ayan Sharma Avatar" class="avatar-img">
+        <span class="avatar-online-ping" aria-hidden="true"></span>
+      </div>
+    </button>
+  </aside>
+
+  <!-- =========================================================================
+       9. MINIMAL FOOTER
+       Monochrome, balanced signature
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-brand">AYAN SHARMA</span>
+        <span class="footer-role">Full-Stack Developer &amp; Builder</span>
+      </div>
+
+      <div class="footer-center">
+        <p>&copy; 2026 Ayan Sharma. All rights reserved.</p>
+        <p class="footer-stack-note">Built with HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+      </div>
+
+      <div class="footer-right">
+        <a href="https://www.linkedin.com/in/ayan-sharma-420218369/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/Ayansh15" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.youtube.com/@WizXCode" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.instagram.com/wizxcode/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#hero">Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       10. INTERACTIVE CASE STUDY MODAL
+       Vanilla JS modal to inspect rich project deep-dives without framework bloat.
+       ========================================================================= -->
+  <div class="case-study-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Case Study">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div class="modal-body" id="modalBody">
+        <!-- Content injected dynamically via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary JavaScript Logic -->
+  <script src="js/script.js"></script>
+</body>
+</html>
